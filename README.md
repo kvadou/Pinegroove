@@ -1,4 +1,4 @@
-# Team Pinegrove | Project #01 : Instant Celebrity Fan Site
+# Team Pinegroove | Project #01 : Instant Celebrity Fan Site
 
 ## FRONT END TEAM:
 <img style="float: right;" src="imgs/bill_readme.jpg">
