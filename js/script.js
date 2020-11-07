@@ -1,19 +1,41 @@
-const apiKey = "&api_key=ZZMVzE78mVVCOYcbnGuHdsZrKPcFpH0A";
+const giphyKey = "&api_key=ZZMVzE78mVVCOYcbnGuHdsZrKPcFpH0A";
 const gifURL = "http://api.giphy.com/v1/gifs/search?";
-const stickerURL = "http://api.giphy.com/v1/stickers/search";
 
 
-$.ajax({
-    url: gifURL + "q=cheeseburgers" + apiKey,
-    method: "GET"
+// omdb example url: http://www.omdbapi.com/?apikey=[yourkey]&
+
+const omdbKey = "apikey=76490f50";
+const omdbDataURL = "http://www.omdbapi.com/?";
+const omdbImgURL = "http://img.omdbapi.com/?"
+
+function giphySearch(keyword) {
+
+    $.ajax({
+        url: gifURL + "q=" + keyword + giphyKey,
+        method: "GET"
+
+    }).then(function (response) {
+
+        console.log(response);
+
+    });
+
+}
 
 
-}).then(function(response){
+function omdbDataSearch(keyword) {
 
-    console.log(response);
+    $.ajax({
+        url: omdbDataURL +  "&" + omdbKey + "&t=" + keyword,
+        method: "GET"
 
 
+    }).then(function (response) {
+     
+      
 
+        console.log(response);
+    });
 
+}
 
-});
