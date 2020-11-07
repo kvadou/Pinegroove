@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // variables for the celebrity name fields new comment blah blah blah //
 let celebSearch = document.querySelector("#celebSearch");
 let celebNameButton = document.querySelector("#celebName");
@@ -35,7 +34,6 @@ celebNameButton.addEventListener("click", function(event) {
   
   }
 });
-=======
 const giphyKey = "&api_key=ZZMVzE78mVVCOYcbnGuHdsZrKPcFpH0A";
 const gifURL = "http://api.giphy.com/v1/gifs/search?";
 
@@ -85,4 +83,3 @@ function omdbDataSearch(keyword) {
 
 
 
->>>>>>> a455e659efd5582ffba1fd5075c5137330bbd78c
