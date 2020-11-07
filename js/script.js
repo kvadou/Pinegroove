@@ -1,4 +1,4 @@
-// variables for the celebrity name fields  //
+// variables for the celebrity name fields new comment  //
 let celebSearch = document.querySelector("#celebSearch");
 let celebNameButton = document.querySelector("#celebName");
 
