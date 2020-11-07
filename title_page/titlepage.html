@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="has-background-grey-light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,7 +10,7 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body">
     <section class="hero is-dark">
       <div class="hero-body">
         <div class="container">
@@ -21,18 +21,30 @@
       </div>
     </section>
     <div class="container">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Question_mark_%28black%29.svg/1024px-Question_mark_%28black%29.svg.png" id="titleImg" alt="Question Mark">
+      <div class="columns is-mobile is-centered">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Question_mark_%28black%29.svg/1024px-Question_mark_%28black%29.svg.png" id="titleImg" alt="Question Mark">
+      </div>
       <br>
-      <div class="field">
-        <div class="control">
-          <input class="input" id="celebName" type="text" placeholder="Celebrity Name">
-          <input class="button" id="celebSearch" type="submit" value="Create Fan Page">
+      <br>
+      <div class="columns is-mobile is-centered">
+        <div class="column is-half is-offset-one-quarter">
+          <div class="field">
+            <div class="control">
+              <!--This is the Celebrity name input-->
+              <input class="input" id="celebName" type="text" placeholder="Celebrity Name">
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+        <div class="columns is-mobile is-centered">
+          <div class="column is-half is-offset-one-quarter">
+          <!--This is the button which submits user input-->
+          <input class="button" id="celebSearch" type="submit" value="Create Fan Page">
+          </div>
+        </div>
 
 
 
-
+  <script src="../js/script.js"></script>
   </body>
 </html>
