@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // variables for the celebrity name fields new comment blah blah blah //
 let celebSearch = document.querySelector("#celebSearch");
 let celebNameButton = document.querySelector("#celebName");
@@ -34,3 +35,54 @@ celebNameButton.addEventListener("click", function(event) {
   
   }
 });
+=======
+const giphyKey = "&api_key=ZZMVzE78mVVCOYcbnGuHdsZrKPcFpH0A";
+const gifURL = "http://api.giphy.com/v1/gifs/search?";
+
+
+// omdb example url: http://www.omdbapi.com/?apikey=[yourkey]&
+
+const omdbKey = "apikey=76490f50";
+const omdbDataURL = "http://www.omdbapi.com/?";
+const omdbImgURL = "http://img.omdbapi.com/?";
+
+function giphySearch(keyword) {
+
+    $.ajax({
+        url: gifURL + "q=" + keyword + giphyKey,
+        method: "GET"
+
+    }).then(function (response) {
+
+        console.log(response);
+
+    });
+
+}
+
+
+function omdbDataSearch(keyword) {
+
+    $.ajax({
+        url: omdbDataURL + "&" + omdbKey + "&t=" + keyword,
+        method: "GET"
+
+
+    }).then(function (response) {
+
+
+
+        console.log(response);
+    });
+
+};
+
+
+
+
+
+
+
+
+
+>>>>>>> a455e659efd5582ffba1fd5075c5137330bbd78c
