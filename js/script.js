@@ -6,7 +6,7 @@ const gifURL = "http://api.giphy.com/v1/gifs/search?";
 
 const omdbKey = "apikey=76490f50";
 const omdbDataURL = "http://www.omdbapi.com/?";
-const omdbImgURL = "http://img.omdbapi.com/?"
+const omdbImgURL = "http://img.omdbapi.com/?";
 
 function giphySearch(keyword) {
 
@@ -26,16 +26,24 @@ function giphySearch(keyword) {
 function omdbDataSearch(keyword) {
 
     $.ajax({
-        url: omdbDataURL +  "&" + omdbKey + "&t=" + keyword,
+        url: omdbDataURL + "&" + omdbKey + "&t=" + keyword,
         method: "GET"
 
 
     }).then(function (response) {
-     
-      
+
+
 
         console.log(response);
     });
 
-}
+};
+
+
+
+
+
+
+
+
 
