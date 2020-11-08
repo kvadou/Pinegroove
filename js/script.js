@@ -1,81 +1,147 @@
-// variables for the celebrity name fields new comment blah blah blah //
+
 let celebSearch = document.querySelector("#celebSearch");
-let celebNameButton = document.querySelector("#celebName");
+let celebNameInput = document.querySelector("#celebName");
 
-
-function displayMessage(type, message) {
-  msgDiv.textContent = message;
-  msgDiv.setAttribute("class", type);
-}
-
-// event listener for the celeb name button //
-
-celebNameButton.addEventListener("click", function(event) {
-  event.preventDefault();
-  
-// create celeb object from submission //
-  let celeb = {
-    celebSearch: celebSearchInput.value.trim(),
-  };
-
-  console.log(celeb);
-  
- // validate the field to make sure its not empty //
- if (celeb.celebSearch === "") {
-  displayMessage("error", "Field cannot be blank");
-} else {
-  displayMessage("success", "Bingo!");
-
-  // set new celeb submission //
-  localStorage.setItem("celeb", JSON.stringify(celeb));
-    
-  // get most recent celeb submission //
-  let lastCeleb = JSON.parse(localStorage.getItem("celeb"));
-  
-  }
-});
 const giphyKey = "&api_key=ZZMVzE78mVVCOYcbnGuHdsZrKPcFpH0A";
 const gifURL = "http://api.giphy.com/v1/gifs/search?";
 
-
-// omdb example url: http://www.omdbapi.com/?apikey=[yourkey]&
-
 const omdbKey = "apikey=76490f50";
 const omdbDataURL = "http://www.omdbapi.com/?";
-const omdbImgURL = "http://img.omdbapi.com/?";
+
+
+
+
+
+
+$(document).ready(function () {
+  
+  if ($("#celebSearch").length) {
+
+    // event listener for the celeb name button 
+    celebSearch.addEventListener("click", function (event) {
+      event.preventDefault();
+
+      // searches the movie database
+      theMovieDBSearch(celebNameInput.value);
+
+    });
+
+  };
+
+
+});
+
+
+
+
+
+
 
 function giphySearch(keyword) {
 
-    $.ajax({
-        url: gifURL + "q=" + keyword + giphyKey,
-        method: "GET"
+  $.ajax({
+    url: gifURL + "q=" + keyword + giphyKey,
+    method: "GET"
 
-    }).then(function (response) {
+  }).then(function (response) {
 
-        console.log(response);
+    console.log(response);
 
-    });
+  });
+
+};
+
+function theMovieDBSearch(keyword) {
+
+  $.ajax({
+    url: "https://api.themoviedb.org/3/search/person?api_key=15078abc7623d4a65b34fe0d5335ffad&query=" + keyword,
+    method: "GET"
+
+  }).then(function (response) {
+    // create celeb object from submission //
+    let celeb = {
+      celebSearch: celebNameInput.value.trim(),
+    };
+
+    // write celeb name to localstorage
+    localStorage.setItem("celeb", JSON.stringify(celeb));
+
+    // write response to localstorage
+    localStorage.setItem("response", JSON.stringify(response));
+
+    // get most recent celeb submission //
+    /* console.log(response); */
+
+
+    // forward to index.html page
+    window.open("../index.html");
+
+
+
+  });
 
 }
 
+function populateIndex() {
 
-function omdbDataSearch(keyword) {
+  let lastCeleb = JSON.parse(localStorage.getItem("celeb"));
+  let celebObj = JSON.parse(localStorage.getItem("response"));
 
-    $.ajax({
-        url: omdbDataURL + "&" + omdbKey + "&t=" + keyword,
-        method: "GET"
+  console.log(celebObj);
 
-
-    }).then(function (response) {
-
+  $('#celebPic').attr("src", "http://image.tmdb.org/t/p/w500" + celebObj.results[0].profile_path);
+  $("#celeb_name").text(celebObj.results[0].name);
 
 
-        console.log(response);
-    });
+
 
 };
 
 
+
+
+
+function omdbDataSearch(keyword) {
+
+  $.ajax({
+    url: omdbDataURL + "&" + omdbKey + "&t=" + keyword,
+    method: "GET",
+
+    error: function () {
+
+      // another error msg popup saying there was an error with the api call
+      let errorMsg = $("#error-notification");
+
+      errorMsg.css("display", "block");
+
+
+
+    }
+
+
+  }).then(function (response) {
+
+    if (response.Error) {
+
+      let errorMsg = $("#error-notification");
+      errorMsg.css("display", "block");
+
+    }
+
+    console.log(response);
+  });
+
+};
+
+
+
+// closes notification window when user clicks "x"
+$(".delete").on("click", function () {
+  console.log((this));
+  let errorMsg = $("#error-notification");
+  errorMsg.css("display", "none");
+
+});
 
 
 
