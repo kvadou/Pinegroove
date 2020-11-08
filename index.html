@@ -2,38 +2,136 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
-    />
-    <title></title>
-    <!-- ^ above here in the title we'll need to have the user's input displayed-->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="title_page/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" />
+  <title>
+
+  </title>
+  <!-- ^ above here in the title we'll need to have the user's input displayed-->
 </head>
 
 <body>
-   <!-- Welcome to Index page of project-->
-   <!-- Once the user has input their search on the landing page, this page will display-->
-   
-   <!--Jumbotron div with Image API??-->
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="js/script.js"></script>
+  <!-- Welcome to Index page of project-->
+  <!-- Once the user has input their search on the landing page, this page will display-->
+
+  <section class="hero is-info is-large">
+    <h1 id='celeb_name'></h1>
+
+    
+      
+        <div class="container" id='index_container'>
+
+          <figure class="image is-16by9">
+            <iframe id="celebPic" class="has-ratio" width="640" height="360" src="" frameborder="0"
+              allowfullscreen></iframe>
+          </figure>
+          <!--Jumbotron div with Image API??-->
+
+
+
+          <!-- ordered list for user to input their favorite movies -->
+
+          <ol id='favMoviesList'>
+            <li>
+              <div class="box">
+                <article class="media">
+                  <div class="media-left">
+                    <figure class="image is-64x64">
+                      <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
+                    </figure>
+                  </div>
+                  <div class="media-content">
+                    <div class="content">
+                      <p>
+                        <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+                        <br>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa
+                        fringilla
+                        egestas. Nullam condimentum luctus turpis.
+                      </p>
+                    </div>
+                    <nav class="level is-mobile">
+                      <div class="level-left">
+                        <a class="level-item" aria-label="reply">
+                          <span class="icon is-small">
+                            <i class="fas fa-reply" aria-hidden="true"></i>
+                          </span>
+                        </a>
+                        <a class="level-item" aria-label="retweet">
+                          <span class="icon is-small">
+                            <i class="fas fa-retweet" aria-hidden="true"></i>
+                          </span>
+                        </a>
+                        <a class="level-item" aria-label="like">
+                          <span class="icon is-small">
+                            <i class="fas fa-heart" aria-hidden="true"></i>
+                          </span>
+                        </a>
+                      </div>
+                    </nav>
+                  </div>
+                </article>
+              </div>
+            </li>
+            <li></li>
+            <li></li>
+
+
+          </ol>
+
+          <!-- movie box - shows a list of movies by this celebrity -->
+          <ul id='movieResults'>
+            <li>
+
+            </li>
+            <li></li>
+            <li></li>
+
+          </ul>
+          <!-- random gif box - with selectors -->
+
+          <div id='gifBoxes'>
+            <div>
+              <span>GIF GENERATOR</span>
+            </div>
+            <button class="button **is-large is-success is-rounded**">Generate</button>
+
+
+          </div>
+
+          <!-- change background color? -->
+
+
+
+          <!-- spot for favorite quote by celebrity -->
+
+          <!-- box for bio -->
+
+        </div>
+      
+    
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    populateIndex();
+  </script>
 </body>
 
 
