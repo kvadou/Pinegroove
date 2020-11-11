@@ -2,6 +2,11 @@
     text-align: center;
 }
 
+.field{
+  float: left;
+  display: float;
+}
+
 #titleImg1{
     height: 300px;
     width: 400px;
@@ -21,6 +26,43 @@
     margin-top: 35px;
 }
 
+#fav-movie-list{
+  width:25%;
+}
+
+#celebPic{
+  float:left;
+  height: 100%;
+  
+}
+
+.movie-ratings{
+  background-color: lightslategray;
+  color: white;
+  padding: 3px;
+  border-radius: 5px;
+  
+}
+.known-name{
+  font-size: 25px;
+}
+
+.box{
+  margin: 10px;
+  box-shadow: 5px 10px;
+  
+}
+#elbox1, #elbox2, #elbox3 {
+  box-shadow: 5px 5px;
+}
+
+.movie-release{
+  background-color: green;
+  color: white;
+  padding: 3px;
+  border-radius: 5px;
+}
+
 #celebSearch{
     width: 250px;
     text-align: left;
@@ -34,6 +76,11 @@
 #error-notification{
     display: none;
 }
+
+#pic-and-list{
+  height: 100%;
+}
+
 
 
 #celeb_name{

@@ -1,11 +1,11 @@
-# |Project #01 : Instant Celebrity Fan Site
+# Project #01 : Instant Celebrity Fan Site
 
 ## Team Pinegrove:
 ## **FRONT END TEAM**:
 
-###                  Jake Kippes, Ellen Williams, Masno Abdulaya
+###                  Masno Abdulaya, Jake Kippes, Ellen Williams 
 ## **BACK END TEAM**: 
-###                Doug Kvamme, Troy Dorman, Malik Jallah
+###                  Doug Kvamme, Malik Jallah, Troy Dorman 
 ##
 
 <br /><br />

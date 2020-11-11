@@ -19,104 +19,235 @@
   <section class="hero is-info is-large">
     <h1 id='celeb_name'></h1>
 
-    
-      
-        <div class="container" id='index_container'>
 
-          <figure class="image is-16by9">
-            <iframe id="celebPic" class="has-ratio" width="640" height="360" src="" frameborder="0"
-              allowfullscreen></iframe>
-          </figure>
-          <!--Jumbotron div with Image API??-->
+    <div class="columns is-vcentered" id='pic-and-list'>
+      <div class="column is-4">
+        <figure class="image is-4by5">
+          <iframe id="celebPic" class="has-ratio" width="640" height="360" src=""></iframe>
+        </figure>
+      </div>
 
+      <div class="column is-4">
 
+        <ul id='favMoviesList'>
+          <li>
+            <div class="box" id='elbox1'>
+              <article class="media">
+                <div class="media-left">
+                  <figure class="image is-64x64">
+                    <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image" id='known-for-pic-1'>
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <div class="content">
+                    <p>
+                      <strong><span id='known-for-name-1' class='known-name'>Forrest Gump</span></strong>
+                      <small><span id='release-date-1' class='movie-release'>1994-07-06</span></small>
+                      <small><span id='rating-1' class='movie-ratings'>8.5 / 10</span></small>
+                      <br>
+                    <p id='overview-1'>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa
+                      fringilla
+                      egestas. Nullam condimentum luctus turpis.
 
-          <!-- ordered list for user to input their favorite movies -->
+                    </p>
 
-          <ol id='favMoviesList'>
-            <li>
-              <div class="box">
-                <article class="media">
-                  <div class="media-left">
-                    <figure class="image is-64x64">
-                      <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
-                    </figure>
+                    </p>
                   </div>
-                  <div class="media-content">
-                    <div class="content">
-                      <p>
-                        <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
-                        <br>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa
-                        fringilla
-                        egestas. Nullam condimentum luctus turpis.
-                      </p>
+                  <nav class="level is-mobile">
+                    <div class="level-left">
+                      <a class="level-item" aria-label="reply">
+                        <span class="icon is-small">
+                          <i class="fas fa-reply" aria-hidden="true"></i>
+                        </span>
+                      </a>
+                      <a class="level-item" aria-label="retweet">
+                        <span class="icon is-small">
+                          <i class="fas fa-retweet" aria-hidden="true"></i>
+                        </span>
+                      </a>
+                      <a class="level-item" aria-label="like">
+                        <span class="icon is-small">
+                          <i class="fas fa-heart" aria-hidden="true"></i>
+                        </span>
+                      </a>
                     </div>
-                    <nav class="level is-mobile">
-                      <div class="level-left">
-                        <a class="level-item" aria-label="reply">
-                          <span class="icon is-small">
-                            <i class="fas fa-reply" aria-hidden="true"></i>
-                          </span>
-                        </a>
-                        <a class="level-item" aria-label="retweet">
-                          <span class="icon is-small">
-                            <i class="fas fa-retweet" aria-hidden="true"></i>
-                          </span>
-                        </a>
-                        <a class="level-item" aria-label="like">
-                          <span class="icon is-small">
-                            <i class="fas fa-heart" aria-hidden="true"></i>
-                          </span>
-                        </a>
-                      </div>
-                    </nav>
-                  </div>
-                </article>
-              </div>
-            </li>
-            <li></li>
-            <li></li>
-
-
-          </ol>
-
-          <!-- movie box - shows a list of movies by this celebrity -->
-          <ul id='movieResults'>
-            <li>
-
-            </li>
-            <li></li>
-            <li></li>
-
-          </ul>
-          <!-- random gif box - with selectors -->
-
-          <div id='gifBoxes'>
-            <div>
-              <span>GIF GENERATOR</span>
+                  </nav>
+                </div>
+              </article>
             </div>
-            <button id="giphyButton" class="button **is-large is-success is-rounded**">Generate</button>
-           
-           <!--Gif # Value Slider--> 
+          </li>
+          <li>
+            <div class="box" id='elbox2'>
+              <article class="media">
+                <div class="media-left">
+                  <figure class="image is-64x64">
+                    <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image" id='known-for-pic-2'>
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <div class="content">
+                    <p>
+                      <strong><span id='known-for-name-2'class='known-name'>John Smith</span></strong>
+                      <small><span id='release-date-2' class='movie-release'>1994-07-06</span></small>
+                      <small><span id='rating-2' class='movie-ratings'>8.5 / 10</span></small>
+                      <br>
+                    <p id='overview-2'>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa
+                      fringilla
+                      egestas. Nullam condimentum luctus turpis.
 
-           <div class="slidecontainer">
-            <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                    </p>
+
+                    </p>
+                  </div>
+                  <nav class="level is-mobile">
+                    <div class="level-left">
+                      <a class="level-item" aria-label="reply">
+                        <span class="icon is-small">
+                          <i class="fas fa-reply" aria-hidden="true"></i>
+                        </span>
+                      </a>
+                      <a class="level-item" aria-label="retweet">
+                        <span class="icon is-small">
+                          <i class="fas fa-retweet" aria-hidden="true"></i>
+                        </span>
+                      </a>
+                      <a class="level-item" aria-label="like">
+                        <span class="icon is-small">
+                          <i class="fas fa-heart" aria-hidden="true"></i>
+                        </span>
+                      </a>
+                    </div>
+                  </nav>
+                </div>
+              </article>
+            </div>
+          </li>
+          <li>
+            <div class="box" id='elbox3'>
+              <article class="media">
+                <div class="media-left">
+                  <figure class="image is-64x64">
+                    <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image" id='known-for-pic-3'>
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <div class="content">
+                    <p>
+                      <strong><span id='known-for-name-3'class='known-name'>John Smith</span></strong>
+                      <small><span id='release-date-3' class='movie-release'>1994-07-06</span></small>
+                      <small><span id='rating-3' class='movie-ratings'>8.5 / 10</span></small>
+                      <br>
+                    <p id='overview-3'>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa
+                      fringilla
+                      egestas. Nullam condimentum luctus turpis.
+
+                    </p>
+
+                    </p>
+                  </div>
+                  <nav class="level is-mobile">
+                    <div class="level-left">
+                      <a class="level-item" aria-label="reply">
+                        <span class="icon is-small">
+                          <i class="fas fa-reply" aria-hidden="true"></i>
+                        </span>
+                      </a>
+                      <a class="level-item" aria-label="retweet">
+                        <span class="icon is-small">
+                          <i class="fas fa-retweet" aria-hidden="true"></i>
+                        </span>
+                      </a>
+                      <a class="level-item" aria-label="like">
+                        <span class="icon is-small">
+                          <i class="fas fa-heart" aria-hidden="true"></i>
+                        </span>
+                      </a>
+                    </div>
+                  </nav>
+                </div>
+              </article>
+            </div>
+          </li>
+
+        </ul>
+
+
+      </div>
+
+      <div id='fav-movie-list'>
+        <div class="field" class="column is-4">
+          <label class="label is-medium">My Favorite Movies</label>
+          <div class="control has-icons-left has-icons-right">
+            <input class="input is-medium" type="text" />
+            <input class="input is-medium" type="text" />
+            <input class="input is-medium" type="text" />
+            <input class="input is-medium" type="text" />
+            <input class="input is-medium" type="text" />
           </div>
-
-          </div>
-
-          <!-- change background color? -->
-
-
-
-          <!-- spot for favorite quote by celebrity -->
-
-          <!-- box for bio -->
-
         </div>
-      
-    
+        <button class="button is-dark" id='save-favs-list'>Save</button>
+      </div>
+    </div>
+
+  </section>
+
+
+
+  <section class="hero is-info is-large is-vcentered">
+
+
+
+
+
+
+
+    <!--Jumbotron div with Image API??-->
+
+
+
+    <!-- ordered list for user to input their favorite movies -->
+
+
+
+    <!-- movie box - shows a list of movies by this celebrity -->
+    <ul id='movieResults'>
+      <li>
+
+      </li>
+      <li></li>
+      <li></li>
+
+    </ul>
+    <!-- random gif box - with selectors -->
+
+    <div id='gifBoxes'>
+      <div>
+        <span>GIF GENERATOR</span>
+      </div>
+      <button id="giphyButton" class="button **is-large is-success is-rounded**">Generate</button>
+
+      <!--Gif # Value Slider-->
+
+      <div class="slidecontainer">
+        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+      </div>
+
+    </div>
+
+    <!-- change background color? -->
+
+
+
+    <!-- spot for favorite quote by celebrity -->
+
+    <!-- box for bio -->
+
+    </div>
+
+
   </section>
 
 

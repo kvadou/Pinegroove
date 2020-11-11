@@ -8,13 +8,13 @@ const gifURL = "https://api.giphy.com/v1/gifs/search?";
 const omdbKey = "apikey=76490f50";
 const omdbDataURL = "https://www.omdbapi.com/?";
 
-
+const tmdbImgUrl = "https://image.tmdb.org/t/p/w500";
 
 
 
 
 $(document).ready(function () {
-  
+
   if ($("#celebSearch").length) {
 
     // event listener for the celeb name button 
@@ -39,7 +39,7 @@ $(document).ready(function () {
 
 function giphySearch(keyword) {
 
-return  $.ajax({
+  return $.ajax({
     url: gifURL + "q=" + keyword + giphyKey,
     method: "GET"
 
@@ -88,10 +88,37 @@ function populateIndex() {
 
   console.log(celebObj);
 
-  $('#celebPic').attr("src", "https://image.tmdb.org/t/p/w500" + celebObj.results[0].profile_path);
+  $('#celebPic').attr("src", tmdbImgUrl + celebObj.results[0].profile_path);
   $("#celeb_name").text(celebObj.results[0].name);
 
+  // send known_for array in repsonse object to new function
+  console.log("dookicky", celebObj.results[0].known_for);
+  knownForDisplay(celebObj.results[0].known_for);
 
+
+
+
+};
+
+function knownForDisplay(movie_list) {
+
+  movie_list.forEach(function (movie, index) {
+    let tempIndex = index + 1;
+    console.log("index: " + index, "movie: ", movie);
+    let knownForPic = "#known-for-pic-" + tempIndex;
+    $(knownForPic).attr("src", tmdbImgUrl + movie.poster_path);
+    let knownForName = "#known-for-name-" + tempIndex;
+    $(knownForName).text(movie.original_title);
+    let releaseDate = "#release-date-" + tempIndex;
+    $(releaseDate).text("Release date: " + movie.release_date);
+    let rating = "#rating-" + tempIndex;
+    $(rating).text(movie.vote_average + " / 10 user rating");
+    let plot = "#overview-" + tempIndex;
+    $(plot).text(movie.overview);
+
+
+
+  });
 
 
 };
@@ -134,13 +161,13 @@ function omdbDataSearch(keyword) {
 
 
 // giphyButton on-click event & data defining
-$("#giphyButton").on("click", async function(){
+$("#giphyButton").on("click", async function () {
   console.log("you clicked the button! great");
-  
+
   let lastCeleb = JSON.parse(localStorage.getItem("celeb"));
   console.log(lastCeleb);
 
-  let response= await giphySearch(lastCeleb.celebSearch);
+  let response = await giphySearch(lastCeleb.celebSearch);
 
   console.log(response.data);
 
@@ -168,7 +195,7 @@ let output = document.getElementById("demo");
 output.innerHTML = slider.value; // Display the default slider value
 
 // Update the current slider value (each time you drag the slider handle)
-slider.oninput = function() {
+slider.oninput = function () {
   output.innerHTML = this.value;
 }
 
