@@ -2,19 +2,32 @@
     text-align: center;
 }
 
-#titleImg{
-    width: 500px;
-    height: 500px;
-    margin-top: 25px;
+#titleImg1{
+    height: 300px;
+    width: 400px;
+    float: left;
+    margin-top: 35px;
+}
+#titleImg2{
+    height: 300px;
+    width: 400px;
+    margin: auto;
+    margin-top: 35px;
+}
+#titleImg3{
+    height: 300px;
+    width: 400px;
+    float: right;
+    margin-top: 35px;
 }
 
 #celebSearch{
-    width: 200px;
+    width: 250px;
     text-align: left;
 }
 
 .input{
-    width: 200px;
+    width: 250px;
     
 }
 
