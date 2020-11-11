@@ -137,8 +137,14 @@ function omdbDataSearch(keyword) {
 $("#giphyButton").on("click", async function(){
   console.log("you clicked the button! great");
   
-  let response= await giphySearch("jennifer anniston");
-  console.log(response.data)
+  let lastCeleb = JSON.parse(localStorage.getItem("celeb"));
+  console.log(lastCeleb);
+
+  let response= await giphySearch(lastCeleb.celebSearch);
+
+  console.log(response.data);
+
+  // Want to add customizable # of gifs the user wants returned
 
   $("body").append(`<img src="${response.data[0].images.original.url}">`)
 });
