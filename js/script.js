@@ -1,5 +1,6 @@
-
+// create fan page button //
 let celebSearch = document.querySelector("#celebSearch");
+// celeb input field //
 let celebNameInput = document.querySelector("#celebName");
 
 const giphyKey = "&api_key=ZZMVzE78mVVCOYcbnGuHdsZrKPcFpH0A";
@@ -31,8 +32,20 @@ $(document).ready(function () {
 
 });
 
+// trigger button click on enter //
+document.getElementById("celebNameInput")
+  
+  celebNameInput.addEventListener("keyup", function(event) {
 
+    event.preventDefault();
 
+    if (event.keyCode === 13) {
+
+      document.getElementById("celebSearch").click();
+    
+    }
+  
+  });
 
 
 
@@ -198,7 +211,6 @@ output.innerHTML = slider.value; // Display the default slider value
 slider.oninput = function () {
   output.innerHTML = this.value;
 }
-
 
 
 
