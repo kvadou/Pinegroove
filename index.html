@@ -1,58 +1,78 @@
 <!DOCTYPE html>
 <html lang="en" class="has-background-grey-light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" />
-  <link rel="stylesheet" href="./css/style.css"/>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-</head>
-
-<body>
-  <section class="hero is-dark">
-    <div class="hero-body">
-      <div class="container">
-        <h1 class="title">
-          Create your own celebrity fansite!
-        </h1>
+  <body>
+    <section class="hero is-info">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">Create your own celebrity fansite!</h1>
+        </div>
       </div>
-    </div>
-  </section>
-  <div class="container">
-    <div class="columns is-mobile is-centered">
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Question_mark_%28black%29.svg/1024px-Question_mark_%28black%29.svg.png"
-        id="titleImg" alt="Question Mark">
-    </div>
-    <br>
-    <br>
-    <div class="columns is-mobile is-centered">
-      <div class="column is-half is-offset-one-quarter">
-        <div class="field">
+    </section>
+    <div class="container is-mobile">
+      <div class="columns">
+        <img
+          id="titleImg1"
+          src="https://i.insider.com/52de8d076da8113b6da3dcf7?width=1100&format=jpeg&auto=webp"
+          alt="Celebrity 1"
+        />
+        <img
+          id="titleImg2"
+          src="https://media2.s-nbcnews.com/j/newscms/2020_07/3227271/200212-jennifer-aniston-cs-900a_2fc059d8fabde605846a7ee11d371854.social_share_1024x768_scale.jpg"
+          alt="Celebrity 2"
+        />
+        <img
+          id="titleImg3"
+          src="https://media.npr.org/assets/img/2014/08/11/ap843452502410_slide-ec377a9f763532779b5d8585c13297fe7e2cfd15-s800-c85.jpg"
+          alt="Celebrity 3"
+        />
+      </div>
+      <br />
+      <br />
+      <div class="columns">
+        <!--<div class="column is-half is-offset-one-quarter">-->
+        <div class="field is-centered">
           <div class="control">
             <!--This is the Celebrity name input-->
-            <input class="input" id="celebName" type="text" placeholder="Celebrity Name">
+            <input
+              class="input"
+              id="celebName"
+              type="text"
+              placeholder="Your Favorite Celebrity"
+            />
           </div>
         </div>
       </div>
-    </div>
-    <div class="columns is-mobile is-centered">
-      <div class="column is-half is-offset-one-quarter">
+      <div class="columns">
+        <!--<div class="column is-half is-offset-one-quarter">-->
         <!--This is the button which submits user input-->
-        <input class="button" id="celebSearch" type="submit" value="Create Fan Page">
+        <input
+          class="button"
+          id="celebSearch"
+          type="submit"
+          value="Create Fan Page"
+        />
+
+        <div class="notification is-warning" id="error-notification">
+          <button class="delete"></button>
+          Sorry! Your keywords did not result in a valid result.
+          <strong>Please try again. </strong>
+        </div>
       </div>
     </div>
-
-    <div class="notification is-warning" id='error-notification'>
-      <button class="delete"></button>
-      Sorry! Your keywords did not result in a valid result. <strong>Please try again. </strong>
-    </div>
-
     <script src="https://cdnjs.cloudflare.co/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <script src="./js/script.js"></script>
-</body>
-
+    <script src="../js/script.js"></script>
+  </body>
 </html>
