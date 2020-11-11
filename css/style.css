@@ -126,3 +126,22 @@
     background: #4CAF50; /* Green background */
     cursor: pointer; /* Cursor on hover */
   }
+
+  .nav-link{
+    color: white;
+    font-size: xx-large;
+    text-align: center;
+  }
+
+  .saveBtn {
+    height: 50px;
+    width: 500px;
+    border-left: 2px solid black;
+    border-top: 2px solid black;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    background-color: orange;
+    color: white;
+  }
