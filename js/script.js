@@ -39,17 +39,16 @@ $(document).ready(function () {
 
 function giphySearch(keyword) {
 
-  $.ajax({
+return  $.ajax({
     url: gifURL + "q=" + keyword + giphyKey,
     method: "GET"
 
-  }).then(function (response) {
-
-    console.log(response);
-
   });
 
+
 };
+
+
 
 function theMovieDBSearch(keyword) {
 
@@ -132,6 +131,18 @@ function omdbDataSearch(keyword) {
   });
 
 };
+
+
+// giphyButton on-click event & data defining
+$("#giphyButton").on("click", async function(){
+  console.log("you clicked the button! great");
+  
+  let response= await giphySearch("jennifer anniston");
+  console.log(response.data)
+
+  $("body").append(`<img src="${response.data[0].images.original.url}">`)
+});
+
 
 
 
