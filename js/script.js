@@ -3,10 +3,10 @@ let celebSearch = document.querySelector("#celebSearch");
 let celebNameInput = document.querySelector("#celebName");
 
 const giphyKey = "&api_key=ZZMVzE78mVVCOYcbnGuHdsZrKPcFpH0A";
-const gifURL = "http://api.giphy.com/v1/gifs/search?";
+const gifURL = "https://api.giphy.com/v1/gifs/search?";
 
 const omdbKey = "apikey=76490f50";
-const omdbDataURL = "http://www.omdbapi.com/?";
+const omdbDataURL = "https://www.omdbapi.com/?";
 
 
 
@@ -88,7 +88,7 @@ function populateIndex() {
 
   console.log(celebObj);
 
-  $('#celebPic').attr("src", "http://image.tmdb.org/t/p/w500" + celebObj.results[0].profile_path);
+  $('#celebPic').attr("src", "https://image.tmdb.org/t/p/w500" + celebObj.results[0].profile_path);
   $("#celeb_name").text(celebObj.results[0].name);
 
 
