@@ -18,16 +18,7 @@
 
   <section class="hero is-info is-large">
 
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <button type="button" class="btn btn-primary saveBtn" data-toggle="button" aria-pressed="false">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-          <li class="nav-item">
-            <a class="nav-link" href="../index.html">Choose a new Celeb!</a>
-          </li>
-        </ul>
-      </button>
-    </div>
+  
 
 
     <h1 id='celeb_name'></h1>
@@ -38,6 +29,17 @@
         <figure class="image is-4by5">
           <iframe id="celebPic" class="has-ratio" width="640" height="360" src=""></iframe>
         </figure>
+         <!-- change background color? -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <button type="button" class="btn btn-primary saveBtn" data-toggle="button" aria-pressed="false">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Choose a new Celeb!</a>
+          </li>
+        </ul>
+      </button>
+    </div>
       </div>
 
       <div class="column is-4">
@@ -55,6 +57,7 @@
                   <div class="content">
                     <p>
                       <strong><span id='known-for-name-1' class='known-name'>Forrest Gump</span></strong>
+                      <br>
                       <small><span id='release-date-1' class='movie-release'>1994-07-06</span></small>
                       <small><span id='rating-1' class='movie-ratings'>8.5 / 10</span></small>
                       <br>
@@ -102,6 +105,7 @@
                   <div class="content">
                     <p>
                       <strong><span id='known-for-name-2' class='known-name'>John Smith</span></strong>
+                      <br>
                       <small><span id='release-date-2' class='movie-release'>1994-07-06</span></small>
                       <small><span id='rating-2' class='movie-ratings'>8.5 / 10</span></small>
                       <br>
@@ -149,6 +153,7 @@
                   <div class="content">
                     <p>
                       <strong><span id='known-for-name-3' class='known-name'>John Smith</span></strong>
+                      <br>
                       <small><span id='release-date-3' class='movie-release'>1994-07-06</span></small>
                       <small><span id='rating-3' class='movie-ratings'>8.5 / 10</span></small>
                       <br>
@@ -189,9 +194,21 @@
 
 
       </div>
+      
 
       <div id='fav-movie-list'>
         <div class="field" class="column is-4">
+          <div id='gifBoxes'>
+            <div>
+              <span>GIF GENERATOR</span>
+            </div>
+            <button id="giphyButton" class="button **is-large is-success is-rounded**">Generate</button>
+            <div id="rendered-gif"></div>
+            <!--Gif # Value Slider-->
+      
+        
+      
+          </div>
           <label class="label is-medium">My Favorite Movies</label>
           <div class="control has-icons-left has-icons-right">
             <input class="input is-medium" type="text" />
@@ -200,9 +217,15 @@
             <input class="input is-medium" type="text" />
             <input class="input is-medium" type="text" />
           </div>
+          
+
         </div>
         <button class="button is-dark" id='save-favs-list'>Save</button>
+        <br/>
+        <label class="label is-medium">Select Background Color</label>
+          <input name="Color Picker" type="color" id='color-picker'/>
       </div>
+      
     </div>
 
   </section>
@@ -236,22 +259,9 @@
     </ul>
     <!-- random gif box - with selectors -->
 
-    <div id='gifBoxes'>
-      <div>
-        <span>GIF GENERATOR</span>
-      </div>
-      <button id="giphyButton" class="button **is-large is-success is-rounded**">Generate</button>
-      <div id="rendered-gif"></div>
-      <!--Gif # Value Slider-->
+    
 
-      <div class="slidecontainer">
-        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-      </div>
-
-    </div>
-
-    <!-- change background color? -->
-
+   
 
 
     <!-- spot for favorite quote by celebrity -->
