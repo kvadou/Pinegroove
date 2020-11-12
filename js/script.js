@@ -1,6 +1,6 @@
-// create fan page button //
+// create fan page button 
 let celebSearch = document.querySelector("#celebSearch");
-// celeb input field //
+// celeb input field 
 let celebNameInput = document.querySelector("#celebName");
 
 const giphyKey = "&api_key=ZZMVzE78mVVCOYcbnGuHdsZrKPcFpH0A";
@@ -62,7 +62,6 @@ function giphySearch(keyword) {
 };
 
 
-
 function theMovieDBSearch(keyword) {
 
   $.ajax({
@@ -108,7 +107,17 @@ function populateIndex() {
   console.log("dookicky", celebObj.results[0].known_for);
   knownForDisplay(celebObj.results[0].known_for);
 
-
+  let colorPicker = document.querySelector("#color-picker");
+  console.log('value of colorpicker: ' + colorPicker);
+  colorPicker.addEventListener("input", watchColorPicker, false);
+  colorPicker.addEventListener("change", watchColorPicker, false);
+  
+  function watchColorPicker(event) {
+    console.log('triggered');
+   let theBody = document.querySelector(".hero.is-info");
+   theBody.style.backgroundColor = event.target.value;
+    
+  }
 
 
 };

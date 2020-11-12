@@ -33,6 +33,8 @@
 #celebPic{
   float:left;
   height: 100%;
+  padding-left: 15px;
+ 
   
 }
 
@@ -84,7 +86,8 @@
 
 
 #celeb_name{
-    font-size: 150px;
+    font-size: 125px;
+    padding-left: 15px;
 }
 
 
