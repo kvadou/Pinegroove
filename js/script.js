@@ -74,7 +74,7 @@ function theMovieDBSearch(keyword) {
       /* console.log(response); */
 
       // forward to titlepage.html page
-      window.open("./title_page/titlepage.html");
+      window.open("./title_page/titlepage.html", "_self");
 
     }
 
