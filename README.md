@@ -1,6 +1,6 @@
-# Project #01 : Instant Celebrity Fan Site
+# Project #01 : Instant Movie Star Fan Site
 
-## Team Pinegrove:
+## Team Pinegrove aka Pine**groove**:
 ## **FRONT END TEAM**:
 
 ###                  Masno Abdulaya, Jake Kippes, Ellen Williams 
@@ -8,10 +8,7 @@
 ###                  Doug Kvamme, Malik Jallah, Troy Dorman 
 ##
 
-<br /><br />
-
-
-
+<br />
 
 
 ## Overview
@@ -23,7 +20,7 @@ The focus of this assignment was to work in a collaborative development project 
 * Be deployed to GitHub Pages.
 * Be interactive (i.e., accept and respond to user input).
 * Use at least two server-side APIs.
-* Does not use alerts, confirms, or prompts (use modals).
+* Does not use alerts, confirms, or prompts.
 * Use client-side storage to store persistent data.
 * Be responsive.
 * Have a polished UI.
@@ -34,13 +31,22 @@ The focus of this assignment was to work in a collaborative development project 
 
 ## Description
 
-The idea of this website is to utilize multiple third party APIs to create an instant, interactive celebrity fan website. When the user connects, they are asked to enter a celebrity.  After entering, the user is transported to an automatically generated fan site for that celebrity, that can be further customized by the user.  Increased customization includes:
+The idea of this website is to utilize multiple third party APIs to create an instant, interactive movie star fan website. When the user connects, they are asked to enter a movie star's name.  After entering, the user is transported to an automatically generated fan site for that celebrity, that can be further customized by the user.  Increased customization includes:
 
 <br/>
 
-* Favorite Movie Poster
-* Favorite Quote
-* Favorite Movie List
+* Professional head shot of the movie star
+* "Known for" movie information boxes that include:
+    * Thumbnail movie poster
+    * Movie's title
+    * Movie's release date
+    * Movie's user rating score (out of 10)
+    * A plot synopsis 
+* Favorite movie list
+* Background color picker
+* "Generate GIF" button that randomly displays an animated GIF of that movie star.
+* A "start over" button that lets the user pick a new celebrity.
+
 
 <br/>
 
@@ -48,16 +54,26 @@ The idea of this website is to utilize multiple third party APIs to create an in
 
 
 * Divided the team into two teams: **back end** and **front end**.
-* Delegated duties amongst teams.
-* 
+* Delegated duties amongst teams utlitizing the project kanban.
+* Built API queries
+* Selected Bulma CSS framework & built UI 
+* Set up local storage variables to hold favorite movies list, celebrity name, and the response object from the APIs.
+* Displayed response data into front end UI
+* Masno & Ellen wrote the GIPHY GIF generation
+* Doug wrote the "enter" event listener
+* Malik wrote the "start over" feature
+* Troy wrote the background color picker
+* Jacob wrote the favorite movie list back end
+
 
 
 #### Here are the steps taken to achieve this complete our project:
 
 * Built initial file system structure and deployed basic blueprint to Github to complete repository construction.
 * Sketched out pseudo code logic and transcribed them into the code as comments.
-
-
+* Utilizing the kanban, tasks were delegated over the weeks to various members.  
+* Learned the "Git Collaborative Experience" through constant communication, updates & working out merge conflicts with team members.
+* Practiced presentation multiple times Thursday.
 
 After multiple trial and error debugging sessions, all applied logic appears sound and no bugs can be generated from purposeful negligent entries.  From this point, it was time to clean up:
 
@@ -82,23 +98,14 @@ This project can be previewed live via Github Pages at: https://kvadou.github.io
 
 # Screenshots of Deployed Website
 
+![screenshot 992px width](/imgs/login1.PNG)
+![screenshot 992px width](/imgs/example1.PNG)
+![screenshot 992px width](/imgs/example2.PNG)
+![screenshot 768px width](/imgs/example3.PNG)
+![screenshot 768px width](/imgs/login-error.PNG)
 
-## 992px Width 
-![screenshot 992px width](/img/992_.PNG)
-![screenshot 992px width](/img/992_.PNG)
-![screenshot 992px width](/img/992_.PNG)
-
-## 768px Width 
-![screenshot 768px width](/img/768_.PNG)
-![screenshot 768px width](/img/768_.PNG)
-![screenshot 768px width](/img/768_.PNG)
-
-## 400px Width 
-![screenshot 400px width](/img/400_.PNG)
-![screenshot 400px width](/img/400_.PNG)
-![screenshot 400px width](/img/400_.PNG)
 
 
 ### License
 
-Copyright 2020 T. Dorman, distrubuted under the **GNU Public License** for the Univeristy of Minnesota Part-Time Full Stack Coding Boot Camp.
+Copyright 2020 **Team Pinegroove** distrubuted under the **GNU Public License** for the Univeristy of Minnesota Part-Time Full Stack Coding Boot Camp.
