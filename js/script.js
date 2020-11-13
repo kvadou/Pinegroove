@@ -3,9 +3,6 @@ let celebSearch = document.querySelector("#celebSearch");
 // celeb input field
 let celebNameInput = document.querySelector("#celebName");
 
-const giphyKey = "&api_key=ZZMVzE78mVVCOYcbnGuHdsZrKPcFpH0A";
-const gifURL = "https://api.giphy.com/v1/gifs/search?";
-
 const omdbKey = "apikey=76490f50";
 const omdbDataURL = "https://www.omdbapi.com/?";
 
@@ -32,13 +29,6 @@ if (celebNameInput) {
     if (event.keyCode === 13) {
       document.getElementById("celebSearch").click();
     }
-  });
-}
-
-function giphySearch(keyword) {
-  return $.ajax({
-    url: gifURL + "q=" + keyword + giphyKey,
-    method: "GET",
   });
 }
 
@@ -158,24 +148,7 @@ function omdbDataSearch(keyword) {
   });
 }
 
-// giphyButton on-click event & data defining
-$("#giphyButton").on("click", async function () {
-  console.log("you clicked the button! great");
-
-  let lastCeleb = JSON.parse(localStorage.getItem("celeb"));
-  console.log(lastCeleb);
-
-  let response = await giphySearch(lastCeleb.celebSearch);
-
-  console.log(response.data);
-
-  // Want to add customizable # of gifs the user wants returned
-
-  $("body").append(`<img src="${response.data[0].images.original.url}">`);
-});
-
-//$("#save-favs-list").on("click", function () {
-
+// save list of favorite movies //
 if (document.querySelector("#save-favs-list")) {
   document
     .querySelector("#save-favs-list")
