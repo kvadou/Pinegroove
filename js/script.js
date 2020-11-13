@@ -48,23 +48,39 @@ function theMovieDBSearch(keyword) {
       "https://api.themoviedb.org/3/search/person?api_key=15078abc7623d4a65b34fe0d5335ffad&query=" +
       keyword,
     method: "GET",
+    error: function () {
+      // another error msg popup saying there was an error with the api call
+      let errorMsg = $("#error-notification");
+
+      errorMsg.css("display", "block");
+    },
   }).then(function (response) {
     // create celeb object from submission //
-    let celeb = {
-      celebSearch: celebNameInput.value.trim(),
-    };
+    if (response.Error || response.results.length === 0) {
+      let errorMsg = $("#error-notification");
+      errorMsg.css("display", "block");
+    } else {
+      let celeb = {
+        celebSearch: celebNameInput.value.trim(),
+      };
 
-    // write celeb name to localstorage
-    localStorage.setItem("celeb", JSON.stringify(celeb));
+      // write celeb name to localstorage
+      localStorage.setItem("celeb", JSON.stringify(celeb));
 
-    // write response to localstorage
-    localStorage.setItem("response", JSON.stringify(response));
+      // write response to localstorage
+      localStorage.setItem("response", JSON.stringify(response));
 
-    // get most recent celeb submission //
-    /* console.log(response); */
+      // get most recent celeb submission //
+      /* console.log(response); */
 
-    // forward to titlepage.html page
-    window.open("./title_page/titlepage.html");
+      // forward to titlepage.html page
+      window.open("./title_page/titlepage.html");
+
+    }
+
+
+
+
   });
 }
 
@@ -130,7 +146,10 @@ function omdbDataSearch(keyword) {
       errorMsg.css("display", "block");
     },
   }).then(function (response) {
-    if (response.Error) {
+    console.log("hello" + response.results.length);
+
+
+    if (response.Error || response.results.length === 0) {
       let errorMsg = $("#error-notification");
       errorMsg.css("display", "block");
     }
@@ -156,19 +175,25 @@ $("#giphyButton").on("click", async function () {
 });
 
 //$("#save-favs-list").on("click", function () {
-document
-  .querySelector("#save-favs-list")
-  .addEventListener("click", function () {
-    let savedFavs = {
-      input1: document.querySelector("#text1").value.trim(),
-      input2: document.querySelector("#text2").value.trim(),
-      input3: document.querySelector("#text3").value.trim(),
-      input4: document.querySelector("#text4").value.trim(),
-      input5: document.querySelector("#text5").value.trim(),
-    };
 
-    localStorage.setItem("favMovies", JSON.stringify(savedFavs));
-  });
+if (document.querySelector("#save-favs-list")) {
+  document
+    .querySelector("#save-favs-list")
+    .addEventListener("click", function () {
+      let savedFavs = {
+        input1: document.querySelector("#text1").value.trim(),
+        input2: document.querySelector("#text2").value.trim(),
+        input3: document.querySelector("#text3").value.trim(),
+        input4: document.querySelector("#text4").value.trim(),
+        input5: document.querySelector("#text5").value.trim(),
+      };
+
+      localStorage.setItem("favMovies", JSON.stringify(savedFavs));
+    });
+
+
+}
+
 
 
 // closes notification window when user clicks "x"
