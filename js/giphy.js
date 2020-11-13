@@ -1,9 +1,10 @@
 let giphyBtn = document.getElementById("giphyButton");
 let renderedGif = document.getElementById("rendered-gif");
 let celebObj = JSON.parse(localStorage.getItem("response"));
-let searchedCeleb = celebObj.results[0].name;
+
 
 giphyBtn.addEventListener("click", function () {
+    let searchedCeleb = celebObj.results[0].name;
     let giphyApi = `https://api.giphy.com/v1/gifs/random?tag=${searchedCeleb}&api_key=ZZMVzE78mVVCOYcbnGuHdsZrKPcFpH0A`;
     fetch(giphyApi)
         .then((response) => response.json())
