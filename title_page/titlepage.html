@@ -6,44 +6,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" />
-  <title>
-
-  </title>
-  <!-- ^ above here in the title we'll need to have the user's input displayed-->
+  <title>Movie Star Fan Page</title>
 </head>
 
+
+<!-- Once the user has input their search on the landing page, this page will display -->
+
+
 <body>
-  <!-- Welcome to Index page of project-->
-  <!-- Once the user has input their search on the landing page, this page will display-->
 
   <section class="hero is-info is-large">
 
-  
-
-
+    <!-- celeb's name header -->
     <h1 id='celeb_name'></h1>
 
-
+    <!-- column 1 : celeb's headshot & restart button -->
     <div class="columns is-vcentered" id='pic-and-list'>
       <div class="column is-4">
         <figure class="image is-4by5">
           <iframe id="celebPic" class="has-ratio" width="640" height="360" src=""></iframe>
         </figure>
-         <!-- change background color? -->
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <button type="button" class="btn btn-primary saveBtn" data-toggle="button" aria-pressed="false">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-          <li class="nav-item">
-            <a class="nav-link" href="../index.html">Choose a new Celeb!</a>
-          </li>
-        </ul>
-      </button>
-    </div>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <button type="button" class="btn btn-primary saveBtn" data-toggle="button" aria-pressed="false">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+              <li class="nav-item">
+                <a class="nav-link" href="../index.html">Choose a new Celeb!</a>
+              </li>
+            </ul>
+          </button>
+        </div>
       </div>
 
+      <!-- column 2: "known-for" movie list API data -->
       <div class="column is-4">
-
         <ul id='favMoviesList'>
           <li>
             <div class="box" id='elbox1'>
@@ -56,39 +53,13 @@
                 <div class="media-content">
                   <div class="content">
                     <p>
-                      <strong><span id='known-for-name-1' class='known-name'>Forrest Gump</span></strong>
+                      <strong><span id='known-for-name-1' class='known-name'></span></strong>
                       <br>
-                      <small><span id='release-date-1' class='movie-release'>1994-07-06</span></small>
-                      <small><span id='rating-1' class='movie-ratings'>8.5 / 10</span></small>
+                      <small><span id='release-date-1' class='movie-release'></span></small>
+                      <small><span id='rating-1' class='movie-ratings'></span></small>
                       <br>
-                    <p id='overview-1'>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa
-                      fringilla
-                      egestas. Nullam condimentum luctus turpis.
-
-                    </p>
-
-                    </p>
+                    <p id='overview-1'> </p>
                   </div>
-                  <nav class="level is-mobile">
-                    <div class="level-left">
-                      <a class="level-item" aria-label="reply">
-                        <span class="icon is-small">
-                          <i class="fas fa-reply" aria-hidden="true"></i>
-                        </span>
-                      </a>
-                      <a class="level-item" aria-label="retweet">
-                        <span class="icon is-small">
-                          <i class="fas fa-retweet" aria-hidden="true"></i>
-                        </span>
-                      </a>
-                      <a class="level-item" aria-label="like">
-                        <span class="icon is-small">
-                          <i class="fas fa-heart" aria-hidden="true"></i>
-                        </span>
-                      </a>
-                    </div>
-                  </nav>
                 </div>
               </article>
             </div>
@@ -104,39 +75,13 @@
                 <div class="media-content">
                   <div class="content">
                     <p>
-                      <strong><span id='known-for-name-2' class='known-name'>John Smith</span></strong>
+                      <strong><span id='known-for-name-2' class='known-name'></span></strong>
                       <br>
-                      <small><span id='release-date-2' class='movie-release'>1994-07-06</span></small>
-                      <small><span id='rating-2' class='movie-ratings'>8.5 / 10</span></small>
+                      <small><span id='release-date-2' class='movie-release'></span></small>
+                      <small><span id='rating-2' class='movie-ratings'></span></small>
                       <br>
-                    <p id='overview-2'>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa
-                      fringilla
-                      egestas. Nullam condimentum luctus turpis.
-
-                    </p>
-
-                    </p>
+                    <p id='overview-2'></p>
                   </div>
-                  <nav class="level is-mobile">
-                    <div class="level-left">
-                      <a class="level-item" aria-label="reply">
-                        <span class="icon is-small">
-                          <i class="fas fa-reply" aria-hidden="true"></i>
-                        </span>
-                      </a>
-                      <a class="level-item" aria-label="retweet">
-                        <span class="icon is-small">
-                          <i class="fas fa-retweet" aria-hidden="true"></i>
-                        </span>
-                      </a>
-                      <a class="level-item" aria-label="like">
-                        <span class="icon is-small">
-                          <i class="fas fa-heart" aria-hidden="true"></i>
-                        </span>
-                      </a>
-                    </div>
-                  </nav>
                 </div>
               </article>
             </div>
@@ -152,64 +97,30 @@
                 <div class="media-content">
                   <div class="content">
                     <p>
-                      <strong><span id='known-for-name-3' class='known-name'>John Smith</span></strong>
+                      <strong><span id='known-for-name-3' class='known-name'></span></strong>
                       <br>
-                      <small><span id='release-date-3' class='movie-release'>1994-07-06</span></small>
-                      <small><span id='rating-3' class='movie-ratings'>8.5 / 10</span></small>
+                      <small><span id='release-date-3' class='movie-release'></span></small>
+                      <small><span id='rating-3' class='movie-ratings'></span></small>
                       <br>
-                    <p id='overview-3'>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa
-                      fringilla
-                      egestas. Nullam condimentum luctus turpis.
-
-                    </p>
-
-                    </p>
+                    <p id='overview-3'></p>
                   </div>
-                  <nav class="level is-mobile">
-                    <div class="level-left">
-                      <a class="level-item" aria-label="reply">
-                        <span class="icon is-small">
-                          <i class="fas fa-reply" aria-hidden="true"></i>
-                        </span>
-                      </a>
-                      <a class="level-item" aria-label="retweet">
-                        <span class="icon is-small">
-                          <i class="fas fa-retweet" aria-hidden="true"></i>
-                        </span>
-                      </a>
-                      <a class="level-item" aria-label="like">
-                        <span class="icon is-small">
-                          <i class="fas fa-heart" aria-hidden="true"></i>
-                        </span>
-                      </a>
-                    </div>
-                  </nav>
                 </div>
               </article>
             </div>
           </li>
-
         </ul>
-
-
       </div>
-      
 
+      <!-- Column 3: GIF button / favorite movie list / color picker  -->
       <div id='fav-movie-list'>
         <div class="field" class="column is-4">
           <div id='gifBoxes'>
-            <div>
-              <span>GIF GENERATOR</span>
-            </div>
-            <button id="giphyButton" class="button **is-large is-success is-rounded**">Generate</button>
+
+            <button id="giphyButton" class="button **is-large is-success is-rounded**">Generate New GIF</button>
             <div id="rendered-gif"></div>
-            <!--Gif # Value Slider-->
-      
-        
-      
-          </div>
-          <label class="label is-medium">My Favorite Movies</label>
+
+          </div><br>
+          <label class="label is-medium" id='movie-label'>My Favorite Movies</label>
           <div class="control has-icons-left has-icons-right">
             <input class="input is-medium" id="text1" type="text" />
             <input class="input is-medium" id="text2" type="text" />
@@ -217,73 +128,17 @@
             <input class="input is-medium" id="text4" type="text" />
             <input class="input is-medium" id="text5" type="text" />
           </div>
-          
-
         </div>
         <button class="button is-dark" id='save-favs-list'>Save</button>
-        <br/>
-        <label class="label is-medium">Select Background Color</label>
-          <input name="Color Picker" type="color" id='color-picker'/>
+        <br />
+        <label id="background-color" class="label is-m
+        edium">Select Background Color</label>
+        <div id="color-pick-box">
+          <input name="Color Picker" type="color" id='color-picker' />
+        </div>
       </div>
-      
     </div>
-
   </section>
-
-
-
-  <section class="hero is-info is-large is-vcentered">
-
-
-
-
-
-
-
-    <!--Jumbotron div with Image API??-->
-
-
-
-    <!-- ordered list for user to input their favorite movies -->
-
-
-
-    <!-- movie box - shows a list of movies by this celebrity -->
-    <ul id='movieResults'>
-      <li>
-
-      </li>
-      <li></li>
-      <li></li>
-
-    </ul>
-    <!-- random gif box - with selectors -->
-
-    
-
-   
-
-
-    <!-- spot for favorite quote by celebrity -->
-
-    <!-- box for bio -->
-
-    </div>
-
-
-  </section>
-
-
-
-
-
-
-
-
-
-
-
-
 
   <script src="../js/giphy.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -292,6 +147,5 @@
     populateIndex();
   </script>
 </body>
-
 
 </html>

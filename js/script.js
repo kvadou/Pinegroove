@@ -5,7 +5,6 @@ let celebNameInput = document.querySelector("#celebName");
 
 const omdbKey = "apikey=76490f50";
 const omdbDataURL = "https://www.omdbapi.com/?";
-
 const tmdbImgUrl = "https://image.tmdb.org/t/p/w500";
 
 $(document).ready(function () {
@@ -20,7 +19,8 @@ $(document).ready(function () {
   }
 });
 
-// trigger button click on enter //
+
+// trigger button click on enter 
 document.getElementById("celebNameInput");
 if (celebNameInput) {
   celebNameInput.addEventListener("keyup", function (event) {
@@ -30,7 +30,8 @@ if (celebNameInput) {
       document.getElementById("celebSearch").click();
     }
   });
-}
+};
+
 
 function theMovieDBSearch(keyword) {
   $.ajax({
@@ -39,13 +40,16 @@ function theMovieDBSearch(keyword) {
       keyword,
     method: "GET",
     error: function () {
+
       // another error msg popup saying there was an error with the api call
       let errorMsg = $("#error-notification");
-
       errorMsg.css("display", "block");
+
     },
+
   }).then(function (response) {
-    // create celeb object from submission //
+
+    // create celeb object from submission 
     if (response.Error || response.results.length === 0) {
       let errorMsg = $("#error-notification");
       errorMsg.css("display", "block");
@@ -60,57 +64,69 @@ function theMovieDBSearch(keyword) {
       // write response to localstorage
       localStorage.setItem("response", JSON.stringify(response));
 
-      // get most recent celeb submission //
-      /* console.log(response); */
-
       // forward to titlepage.html page
       window.open("./title_page/titlepage.html", "_self");
 
     }
-
-
-
-
   });
-}
+};
+
 
 function populateIndex() {
-  let lastCeleb = JSON.parse(localStorage.getItem("celeb"));
+
+  // grab data from localStorage
   let celebObj = JSON.parse(localStorage.getItem("response"));
 
-  console.log(celebObj);
+  initColorPicker();
 
+  // populate celeb's headshot & name 
   $("#celebPic").attr("src", tmdbImgUrl + celebObj.results[0].profile_path);
   $("#celeb_name").text(celebObj.results[0].name);
 
   // send known_for array in repsonse object to new function
-  console.log("dookicky", celebObj.results[0].known_for);
   knownForDisplay(celebObj.results[0].known_for);
 
-  let colorPicker = document.querySelector("#color-picker");
-  console.log("value of colorpicker: " + colorPicker);
-  colorPicker.addEventListener("input", watchColorPicker, false);
-  colorPicker.addEventListener("change", watchColorPicker, false);
+  initFavMovieList();
 
-  function watchColorPicker(event) {
-    console.log("triggered");
-    let theBody = document.querySelector(".hero.is-info");
-    theBody.style.backgroundColor = event.target.value;
-  }
+  // generate our first random animated gif of celeb
+  document.querySelector("#giphyButton").click();
+
+};
+
+
+function initFavMovieList() {
 
   let favMoviesList = JSON.parse(localStorage.getItem("favMovies"));
-  console.log(favMoviesList, "fave");
+
   document.querySelector("#text1").value = favMoviesList.input1;
   document.querySelector("#text2").value = favMoviesList.input2;
   document.querySelector("#text3").value = favMoviesList.input3;
   document.querySelector("#text4").value = favMoviesList.input4;
   document.querySelector("#text5").value = favMoviesList.input5;
-}
 
+};
+
+
+function initColorPicker() {
+
+  let colorPicker = document.querySelector("#color-picker");
+  colorPicker.addEventListener("input", watchColorPicker, false);
+  colorPicker.addEventListener("change", watchColorPicker, false);
+
+  function watchColorPicker(event) {
+
+    let theBody = document.querySelector(".hero.is-info");
+    theBody.style.backgroundColor = event.target.value;
+
+  };
+
+};
+
+
+// display "known-for" movie information 
 function knownForDisplay(movie_list) {
   movie_list.forEach(function (movie, index) {
     let tempIndex = index + 1;
-    console.log("index: " + index, "movie: ", movie);
     let knownForPic = "#known-for-pic-" + tempIndex;
     $(knownForPic).attr("src", tmdbImgUrl + movie.poster_path);
     let knownForName = "#known-for-name-" + tempIndex;
@@ -122,33 +138,10 @@ function knownForDisplay(movie_list) {
     let plot = "#overview-" + tempIndex;
     $(plot).text(movie.overview);
   });
-}
-
-function omdbDataSearch(keyword) {
-  $.ajax({
-    url: omdbDataURL + "&" + omdbKey + "&t=" + keyword,
-    method: "GET",
-
-    error: function () {
-      // another error msg popup saying there was an error with the api call
-      let errorMsg = $("#error-notification");
-
-      errorMsg.css("display", "block");
-    },
-  }).then(function (response) {
-    console.log("hello" + response.results.length);
+};
 
 
-    if (response.Error || response.results.length === 0) {
-      let errorMsg = $("#error-notification");
-      errorMsg.css("display", "block");
-    }
-
-    console.log(response);
-  });
-}
-
-// save list of favorite movies //
+// save list of favorite movies 
 if (document.querySelector("#save-favs-list")) {
   document
     .querySelector("#save-favs-list")
@@ -163,15 +156,13 @@ if (document.querySelector("#save-favs-list")) {
 
       localStorage.setItem("favMovies", JSON.stringify(savedFavs));
     });
-
-
-}
-
+};
 
 
 // closes notification window when user clicks "x"
 $(".delete").on("click", function () {
-  console.log(this);
+
   let errorMsg = $("#error-notification");
   errorMsg.css("display", "none");
+
 });

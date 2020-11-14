@@ -1,167 +1,142 @@
-html{
-  background-color:#e0e0e0;
+html {
+  background-color: #e0e0e0;
 }
 
-.title{
-    text-align: center;
+.title {
+  text-align: center;
 }
 
-.field{
+.field {
   text-align: center;
   display: float;
 }
 
-#titleImg1{
-    height: 300px;
-    width: 400px;
-    float: left;
-    margin-top: 60px;
-}
-#titleImg2{
-    height: 300px;
-    width: 400px;
-    margin: auto;
-    margin-top: 60px;
-}
-#titleImg3{
-    height: 300px;
-    width: 400px;
-    float: right;
-    margin-top: 60px;
+#movie-label {
+  color: white;
 }
 
-#fav-movie-list{
-  width:25%;
+#background-color {
+  text-align: center;
+  color: white;
+  font-size: 20px;
 }
 
-#celebPic{
-  float:left;
+#titleImg1 {
+  height: 300px;
+  width: 400px;
+  float: left;
+  margin-top: 60px;
+}
+
+#color-pick-box {
+  text-align: center;
+}
+
+#titleImg2 {
+  height: 300px;
+  width: 400px;
+  margin: auto;
+  margin-top: 60px;
+}
+
+#titleImg3 {
+  height: 300px;
+  width: 400px;
+  float: right;
+  margin-top: 60px;
+}
+
+#fav-movie-list {
+  width: 25%;
+}
+
+#celebPic {
+  float: left;
   height: 100%;
   padding-left: 15px;
- 
-  
 }
 
-.movie-ratings{
+.movie-ratings {
   background-color: lightslategray;
   color: white;
   padding: 3px;
   border-radius: 5px;
-  
 }
-.known-name{
+
+.known-name {
   font-size: 25px;
 }
 
-.box{
+.box {
   margin: 10px;
   box-shadow: 5px 10px;
-  
 }
+
 #elbox1, #elbox2, #elbox3 {
   box-shadow: 5px 5px;
 }
 
-.movie-release{
+.movie-release {
   background-color: green;
   color: white;
   padding: 3px;
   border-radius: 5px;
 }
 
-#celebSearch{
-    width: 250px;
-    text-align: left;
+#celebSearch {
+  width: 250px;
+  text-align: left;
 }
 
-.input{
-    width: 250px;
-    
+.input {
+  width: 250px;
 }
 
-#error-notification{
-    display: none;
+#error-notification {
+  display: none;
 }
 
-#pic-and-list{
+#pic-and-list {
   height: 100%;
 }
 
-
-
-#celeb_name{
-    font-size: 125px;
-    padding-left: 15px;
+#celeb_name {
+  font-size: 125px;
+  padding-left: 15px;
 }
 
+.nav-link {
+  color: white;
+  font-size: xx-large;
+  text-align: center;
+}
 
-.slidecontainer {
-    width: 100%; /* Width of the outside container */
-  }
-  
-  /* The slider itself */
-  .slider {
-    -webkit-appearance: none;  /* Override default CSS styles */
-    appearance: none;
-    width: 100%; /* Full-width */
-    height: 25px; /* Specified height */
-    background: #d3d3d3; /* Grey background */
-    outline: none; /* Remove outline */
-    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
-    transition: opacity .2s;
-  }
-  
-  /* Mouse-over effects */
-  .slider:hover {
-    opacity: 1; /* Fully shown on mouse-over */
-  }
-  
-  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
-  .slider::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default look */
-    appearance: none;
-    width: 25px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
-    background: #4CAF50; /* Green background */
-    cursor: pointer; /* Cursor on hover */
-  }
-  
-  .slider::-moz-range-thumb {
-    width: 25px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
-    background: #4CAF50; /* Green background */
-    cursor: pointer; /* Cursor on hover */
-  }
+.saveBtn {
+  height: 50px;
+  width: 500px;
+  border-left: 2px solid black;
+  border-top: 2px solid black;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  background-color: orange;
+  color: white;
+}
 
-  .nav-link{
-    color: white;
-    font-size: xx-large;
-    text-align: center;
-  }
+.footer {
+  margin-top: 15%;
+}
 
-  .saveBtn {
-    height: 50px;
-    width: 500px;
-    border-left: 2px solid black;
-    border-top: 2px solid black;
-    border-top-right-radius: 15px;
-    border-top-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    border-bottom-left-radius: 15px;
-    background-color: orange;
-    color: white;
-  }
+#giphyButton {
+  margin-bottom: 10px;
+}
 
-  .footer{
-    margin-top: 15%;
-  }
+.cfpbutton {
+  text-align: center;
+}
 
-  .cfpbutton{
-      text-align: center;
-  }
-
- /* @media screen and (max-width: 480px) {
+/* @media screen and (max-width: 480px) {
     #titleImg1, #titleImg2, #titleImg3 {
       height: 50px;
       width: 150px;
