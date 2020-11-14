@@ -10,7 +10,15 @@ giphyBtn.addEventListener("click", function () {
         .then((response) => response.json())
         .then((response) => {
             console.log(response);
-            renderGif(response);
+            if (response.data.image_height > 350) {
+
+                giphyBtn.click();
+
+            } else {
+                
+                renderGif(response);
+            }
+
         });
 });
 
